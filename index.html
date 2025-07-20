@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICECCT 2024 - Official Layout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+      }
+
+      .top-header {
+        background: #007f89;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .header-left {
+        max-width: 70%;
+      }
+
+      .header-left h1 {
+        font-size: 18px;
+        margin: 0 0 5px;
+        font-weight: bold;
+      }
+
+      .header-left h2 {
+        font-size: 22px;
+        margin: 0 0 8px;
+        font-weight: bold;
+      }
+
+      .header-left p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+      }
+
+      .header-right-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header-right-1 p {
+        width: 170px;
+        font-family: monospace;
+        font-size: 14px;
+        text-align: center;
+        color: white;
+        margin: 10px 0 0 0;
+      }
+
+      .header-right img {
+        max-width: 100px;
+        padding: 8px;
+      }
+
+      .header-right-2 {
+        font-family: monospace;
+        font-size: 2rem;
+      }
+
+      nav {
+        background: #126b6f;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: white;
+        padding: 12px 20px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        background: #0e595c;
+      }
+
+      .tour-section {
+        text-align: center;
+        background: #ffffff;
+        padding: 40px 20px;
+      }
+
+      .tour-section h3 {
+        display: inline-block;
+        background: #d98b39;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin-bottom: 40px;
+      }
+
+      .carousel-container {
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .places {
+        display: flex;
+        transition: transform 5s ease;
+      }
+
+      .place-card {
+        flex: 0 0 25%; /* Show 4 cards at once */
+        box-sizing: border-box;
+        padding: 15px;
+      }
+
+      .place-card-inner {
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+      }
+
+      .place-card img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        margin-bottom: 10px;
+      }
+
+      .place-card p {
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .main-container {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        gap: 30px;
+      }
+
+      .left-section {
+        flex: 2;
+      }
+
+      .left-section img {
+        max-width: 250px;
+        display: block;
+        margin: 20px 0;
+      }
+
+      .left-section p {
+        font-size: 15px;
+        color: #333;
+        line-height: 1.7;
+      }
+
+      .left-section a {
+        color: #0014a5;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      .keynote h3 {
+        margin-top: 30px;
+        font-size: 18px;
+      }
+
+      .keynote ol {
+        padding-left: 20px;
+      }
+
+      .keynote li {
+        font-size: 15px;
+        margin-bottom: 15px;
+      }
+
+      .right-sidebar {
+        flex: 1;
+        border-left: 1px solid #ddd;
+        padding-left: 20px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 30px;
+      }
+
+      .sidebar-section h3 {
+        font-size: 17px;
+        color: #126b6f;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+
+      .important-dates p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .important-dates span {
+        color: #d6006e;
+        font-weight: bold;
+      }
+
+      .sidebar-section img {
+        max-width: 120px;
+        margin: 10px 0;
+      }
+
+      /* PARTICIPANTS SECTION */
+      .countries-section {
+        background-color: #216f6f;
+        color: white;
+        padding: 10px 20px;
+        font-weight: bold;
+      }
+
+      .flags-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: white;
+        padding: 20px 10px;
+      }
+
+      .flag-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 15px;
+      }
+
+      .flag-item img {
+        width: 80px;
+        height: 50px;
+        object-fit: contain;
+        border: 1px solid #ddd;
+        background: white;
+      }
+
+      .flag-item p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        color: #333;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #216f6f;
+        color: white;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .footer-left {
+        max-width: 400px;
+      }
+
+      .footer-left p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .footer-center {
+        margin-top: 3rem;
+        text-align: center;
+        font-family: monospace;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .footer-right {
+        text-align: right;
+      }
+
+      .footer-right img {
+        width: 120px;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        footer {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-right {
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .main-container {
+          flex-direction: column;
+        }
+        .right-sidebar {
+          border-left: none;
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .place-card {
+          flex: 0 0 50%;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .place-card {
+          flex: 0 0 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div class="top-header">
+      <div class="header-left">
+        <h1>2024 Sixth International Conference on</h1>
+        <h2>
+          Electrical, Computer and Communication Technologies (ICECCT 2024)
+        </h2>
+        <p>26 - 28, June 2024 | Durg, Chhattisgarh, INDIA</p>
+      </div>
+      <div class="header-right">
+        <div class="header-right-1">
+          <p>Organized By</p>
+          <img src="logo-footer1.png" alt="Organizer Logo" />
+          <p>Sardar Patel University Balaghat</p>
+        </div>
+        <p class="header-right-2">Sixth Edition</p>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">History</a>
+      <a href="#">Committees</a>
+      <a href="#">Call for Papers</a>
+      <a href="#">Paper Status</a>
+      <a href="#">Program</a>
+      <a href="#">Special Sessions</a>
+      <a href="#">Workshops</a>
+      <a href="#">Registration</a>
+      <a href="#">Social Programs</a>
+      <a href="#">Downloads</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- POST CONFERENCE TOUR -->
+    <div class="tour-section">
+      <h3>27-28 June, 2024<br />Post Conference Tour</h3>
+      <div class="carousel-container">
+        <div class="places" id="carouselTrack">
+          <!-- Any number of cards -->
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?1" />
+              <p>Place 1</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?2" />
+              <p>Place 2</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?3" />
+              <p>Place 3</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?4" />
+              <p>Place 4</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?5" />
+              <p>Place 5</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?6" />
+              <p>Place 6</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?7" />
+              <p>Place 7</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?8" />
+              <p>Place 8</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?9" />
+              <p>Place 9</p>
+            </div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-inner">
+              <img src="https://picsum.photos/200?10" />
+              <p>Place 10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <!-- LEFT SECTION -->
+      <div class="left-section">
+        <h2>ICECCT 2023 (Fifth edition)</h2>
+        <img
+          src="https://plus.unsplash.com/premium_photo-1679547202881-d042e24e987c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Q29uZmVyZW5jZSUyMFByb2NlZWRpbmdzfGVufDB8fDB8fHww"
+          alt="Conference Proceedings"
+        />
+
+        <p>
+          The 2023 Fifth International Conference on Electrical, Computer and
+          Communication Technologies (ICECCT 2023) held at Erode, Tamil Nadu,
+          India during 22 – 24, February 2023. Like the previous editions, the
+          third edition of ICECCT also well received by the research and
+          academic community around the world. ICECCT 2023 received more than
+          950 papers from 17 countries and around 250 papers have been
+          registered for the conference and presented. Participants from more
+          than 32 countries visited the ICECCT conference venue and presented
+          their research articles together in all the sessions.
+        </p>
+
+        <p>
+          The proceedings of IEEE ICECCT 2021 have been published online in IEEE
+          Xplore, the digital library of IEEE.
+        </p>
+
+        <p>
+          <a href="#"
+            >Please click here to access the proceedings of ICECCT 2023 in IEEE
+            Xplore.</a
+          >
+        </p>
+
+        <div class="keynote">
+          <h3>Keynote Speakers of ICECCT 2023 were</h3>
+          <ol>
+            <li>
+              <strong>Dr. MUHAMMAD USMAN</strong><br />
+              Professor, Edge Hill University, UK
+            </li>
+            <li>
+              <strong>Dr. Murugappan M</strong><br />
+              Professor, Kuwait College of Science and Technology (KCST), Kuwait
+            </li>
+            <li>
+              <strong>R. N. Patel</strong><br />
+              Professor, CSVTU, Raipur
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDEBAR -->
+      <div class="right-sidebar">
+        <div class="sidebar-section">
+          <h3>News & Updates</h3>
+          <p style="color: red">
+            No data found, please check the expiration date.
+          </p>
+        </div>
+
+        <div class="sidebar-section important-dates">
+          <h3>Important Dates</h3>
+          <p>Last date for submission: 05, April 2024 <span>(Closed)</span></p>
+          <p>Notification of acceptance: 20, May 2024</p>
+          <p>Registration deadline: 28, May 2024</p>
+          <p>Camera ready paper submission: 31, May 2024</p>
+          <p>Release of conference schedule: 29, May 2024</p>
+          <p>
+            Conference dates:
+            <strong style="color: #007f89">26 – 28, June 2024</strong>
+          </p>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Organized By</h3>
+          <img src="logo-footer1.png" alt="Organizer Logo" />
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Media Partner</h3>
+          <img src="media.png" alt="Media Partner Logo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTICIPANTS SECTION -->
+    <div class="countries-section">
+      ICECCT had participants from the following countries
+    </div>
+    <div class="flags-container">
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/lk.png" alt="Sri Lanka" />
+        <p>Sri Lanka</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/th.png" alt="Thailand" />
+        <p>Thailand</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/gb.png" alt="United Kingdom" />
+        <p>United Kingdom</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/us.png" alt="USA" />
+        <p>USA</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam" />
+        <p>Vietnam</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/dz.png" alt="Algeria" />
+        <p>Algeria</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/az.png" alt="Azerbaijan" />
+        <p>Azerbaijan</p>
+      </div>
+      <div class="flag-item">
+        <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh" />
+        <p>Bangladesh</p>
+      </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="footer-left">
+        <p><strong>Contact</strong></p>
+        <p>The Conference Chair</p>
+        <p>ICECCT 2024</p>
+        <p>CSVTU</p>
+        <p>Newai, Durg</p>
+        <p>Chhattisgarh, INDIA</p>
+        <p>Mobile: +91 97894 89103</p>
+        <p>E-mail: icecct2024@gmail.com</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <p>0</p>
+          <p>Hours</p>
+        </div>
+        <div>
+          <p>0</p>
+          <p>Minutes</p>
+        </div>
+        <div>
+          <p>0</p>
+          <p>Seconds</p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <img src="footer.jpg" alt="Visitors Counter" />
+      </div>
+    </footer>
+
+    <script>
+      const track = document.getElementById("carouselTrack");
+      const cards = document.querySelectorAll(".place-card");
+      const totalCards = cards.length;
+      const visibleCards = 4;
+      let index = 0;
+
+      function moveCarousel() {
+        index++;
+        if (index > totalCards - visibleCards) {
+          index = 0;
+        }
+        const cardWidth = cards[0].offsetWidth;
+        track.style.transform = `translateX(-${index * cardWidth}px)`;
+      }
+
+      setInterval(moveCarousel, 1000);
+    </script>
+  </body>
+</html>

@@ -130,7 +130,7 @@ body {
 
 
 nav {
-  background: #881414;
+  background:linear-gradient(90deg, #e01212 0%, #c44230 60%);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
